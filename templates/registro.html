@@ -1,0 +1,29 @@
+<!Doctype html>
+{% load static %}
+<html lang="es">
+    <head>
+        <title>My APP</title>
+        <link href="{% static 'css/registro.css' %}" rel="stylesheet" type="text/css" media="screen"/>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body>
+    <section>
+    <div class="center">
+        <div class="format">
+            <div class="centerElement">
+            <img class="centerElement" width="300" src="{% static 'img/tortuga2.jpg' %}" alt="#TortugaForever">
+            </div>
+
+            <h1 class="centerElement">Bienvenido a la Resistencia</h1>
+            <p class="centerElement">#tortugaForever</p>
+            <div class="centerElement">
+            <form method="POST">{% csrf_token %}
+                {{ our_form.as_p }}
+                 <input type="submit" value="Registrarme" >
+            </form>
+            </div>
+        </div>
+    </div>
+    </section>
+    </body>
+</html>
